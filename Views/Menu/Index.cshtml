@@ -1,0 +1,35 @@
+@model IEnumerable<NoWait.Models.MenuItem>
+
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<style>
+    .line {
+        border: 2px solid lightblue;
+    }
+</style>
+
+<div class="container">
+    <div id="row">
+        <div class="col-md-4">
+            <h1>Products</h1>
+        </div>
+        <div class="row">
+            <hr class="line">
+        </div>
+        <div class="row">
+            @foreach (var item in Model) {
+                <div class="col-lg-6 text-center my-2">
+                    <a asp-controller="Menu" asp-action="Details" asp-route-id="@item.MenuItemID">
+                        <img src="https://via.placeholder.com/150" alt="">
+                        <div class="menu-content">
+                            <h4>@item.Name<span>€@item.Price</span></h4>
+                            <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
