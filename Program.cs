@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using NoWait.Data;
+using Microsoft.AspNetCore.Identity;
+using NoWait.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("NoWaitContext");
@@ -7,6 +9,9 @@ var connectionString = builder.Configuration.GetConnectionString("NoWaitContext"
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<NoWaitContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<NoWaitContext>();
 
 var app = builder.Build();
 
@@ -23,8 +28,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",

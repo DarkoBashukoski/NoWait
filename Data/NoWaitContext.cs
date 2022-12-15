@@ -1,9 +1,10 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using NoWait.Models;
 
 namespace NoWait.Data; 
 
-public class NoWaitContext : DbContext {
+public class NoWaitContext : IdentityDbContext<ApplicationUser> {
     public NoWaitContext(DbContextOptions<NoWaitContext> options) : base(options) {}
 
     public DbSet<MenuItem>? MenuItems {get; set;}
