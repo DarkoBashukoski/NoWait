@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "x37Jneii3GXvai0ehnGr5rOhh1HzRlmvywNNyDjUNFI=",
+  "Hash": "jVuCJ8N8yVa7Fi3uFPcNHb7dcU1inamPVtzZD57UjJY=",
   "Source": "NoWait",
   "BasePath": "_content/NoWait",
   "Mode": "Default",
@@ -1120,6 +1120,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Darko\\RiderProjects\\NoWait\\NoWait\\wwwroot\\js\\table.js",
+      "SourceId": "NoWait",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Darko\\RiderProjects\\NoWait\\NoWait\\wwwroot\\",
+      "BasePath": "_content/NoWait",
+      "RelativePath": "js/table.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\table.js"
     },
     {
       "Identity": "C:\\Users\\Darko\\RiderProjects\\NoWait\\NoWait\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
