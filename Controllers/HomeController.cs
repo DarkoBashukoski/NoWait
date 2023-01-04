@@ -1,18 +1,22 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using NoWait.Data;
 using NoWait.Models;
 
 namespace NoWait.Controllers;
 
 public class HomeController : Controller {
     private readonly ILogger<HomeController> _logger;
+    private readonly NoWaitContext _context;
 
-    public HomeController(ILogger<HomeController> logger) {
+    public HomeController(ILogger<HomeController> logger, NoWaitContext context) {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index() {
-        return View();
+        IQueryable<MenuItem>? items = _context.MenuItems;
+        return View(items);
     }
 
     public IActionResult Privacy() {

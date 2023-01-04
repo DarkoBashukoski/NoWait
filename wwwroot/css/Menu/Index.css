@@ -1,0 +1,34 @@
+.line {
+    border: 2px solid lightblue;
+}
+
+.card-body h4 {
+    text-align: center;
+    color: green;
+}
+
+.card-body h6 {
+    text-align: center;
+    color: black;
+}
+
+.card-body p {
+    color: green;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    background: #e2ffea;
+}
+
+.card {
+    margin-bottom: 24px;
+}
+
+.recipe-image {
+    padding: 40px;
+}

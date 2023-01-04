@@ -2,7 +2,73 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@model IQueryable<NoWait.Models.MenuItem>
+
+<style>    
+    .main h1 {
+        font-size: 4rem;
+        font-weight: 700;
+    }
+    .btn1 {
+        height: 45px;
+        width: 35%;
+        border: none;
+        outline: none;
+        background-color: black;
+        color: white;
+        font-weight: 700;
+        border-radius: 60px;
+    }
+    .btn1:hover {
+        background-color: grey;
+        transition: 0.5s;
+    }
+    h1 {
+        font-weight: 700;
+    }
+    .card:hover {
+        box-shadow: 4px 5px 15px 1px rgba(0, 0, 0, 0.84);
+        -webkit-box-shadow: 4px 5px 15px 1px rgba(0, 0, 0, 0.84);
+        -moz-box-shadow: 4px 5px 15px 1px rgba(0, 0, 0, 0.84);
+    }
+    a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+    }
+</style>
+
+<div class="main">
+    <image></image>
 </div>
+
+<section class="products">
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-lg-5 m-auto text-center">
+                <h1>What's Trending</h1>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model) {
+                <div class="col-lg-3 text-center my-2">
+                    <a asp-controller="Menu" asp-action="Details" asp-route-id="@item.MenuItemID">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <img src="images/restaurant.jpg" class="img-fluid" alt="">
+                            </div>
+                            <h6>@item.Name</h6>
+                            <p>$@item.Price</p>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+        <div class="row">
+            <div class="col-ld-6 text-center m-auto">
+                <a asp-area="" asp-controller="Menu" asp-action="Index">
+                    <button class="btn1">Click for more</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

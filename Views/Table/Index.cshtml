@@ -201,6 +201,7 @@ c.mousemove(function (e) {
 });
 
 canvas.addEventListener('wheel', function (e) {
+    e.preventDefault();
     mouse = new Vector2f(
         e.pageX - $(this).offset().left,
         e.pageY - $(this).offset().top

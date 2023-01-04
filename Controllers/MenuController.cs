@@ -14,9 +14,7 @@ public class MenuController : Controller {
 
     // GET: Menu
     public async Task<IActionResult> Index() {
-        return _context.MenuItems != null
-            ? View(await _context.MenuItems.ToListAsync())
-            : Problem("Entity set 'NoWaitContext.MenuItems'  is null.");
+        return View(await _context.MenuItems.ToListAsync());
     }
 
     // GET: Menu/Details/5
