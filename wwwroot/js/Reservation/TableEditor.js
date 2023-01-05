@@ -1,18 +1,3 @@
-@model IEnumerable<NoWait.Models.Table>
-
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<canvas id="canvas" width="600px" height="400px" style="border: solid black 1px"></canvas>
-<button class="btn btn-danger" onclick="addTable()">Add Table</button>
-<button class="btn btn-danger" onclick="addChair()">Add Chair</button>
-<button class="btn btn-danger" onclick="addWall()">Add Wall</button>
-
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-
-<script>
 class Vector2f {
     constructor(x, y) {
         this.x = x;
@@ -70,6 +55,18 @@ class Wall {
 }
 
 let canvas = document.getElementById('canvas');
+
+$(document).ready(function() {
+    canvas.width = $('#canvas-container').innerWidth()-15
+    canvas.height = window.innerHeight - 100;
+    $('#content-container').height = canvas.height;
+    $(window).resize(function () {
+        canvas.width = $('#canvas-container').innerWidth()-15
+        canvas.height = window.innerHeight - 100;
+        $('#content-container').height = canvas.height;
+    });
+});
+
 let ctx = canvas.getContext("2d");
 
 let isDown = false;
@@ -117,7 +114,8 @@ tables.push(table);
 draw();
 
 function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     drawGrid();
 
@@ -147,7 +145,7 @@ c.mousedown(function (e) {
         scalePositionStart = selected.position.copy();
         scaleSizeStart = selected.size.copy();
         return;
-    } 
+    }
     if (selected != null && contains(selected, mouse)) {
         movingObject = true;
         moveMouseStart = mouse.copy();
@@ -405,4 +403,3 @@ function addChair() {
 function addWall() {
     walls.push(new Wall());
 }
-</script>

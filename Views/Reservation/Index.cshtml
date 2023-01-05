@@ -1,0 +1,30 @@
+@model IEnumerable<NoWait.Models.Table>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="css/Reservation/Index.css">
+
+<div class="card">
+    <div class="row" style="margin: 0">
+        <div id="canvas-container" class="col-md-8">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="col-md-4">
+            <div id="calendar-container" class="row">
+                @for (int i = 1; i <= 6; i++) {
+                    <div class="col-md-2">
+                        <label>Mo</label>
+                        <button class="btn">@i</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="js/Reservation/TableEditor.js"></script>
+<script src="js/Reservation/DateSelector.js"></script>

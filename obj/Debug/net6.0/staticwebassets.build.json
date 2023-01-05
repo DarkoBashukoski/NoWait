@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8Vtj9qy0E5nwkpG4Vzg+yn5ZYEL6ukQ4paTQa56pF/A=",
+  "Hash": "Y1TJbGL83KiSmjPPafHOpN8SpKYuTCDyyubWPp39+Bo=",
   "Source": "NoWait",
   "BasePath": "_content/NoWait",
   "Mode": "Default",
@@ -1088,6 +1088,23 @@
       "OriginalItemSpec": "wwwroot\\css\\Menu\\Index.css"
     },
     {
+      "Identity": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\css\\Reservation\\Index.css",
+      "SourceId": "NoWait",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\",
+      "BasePath": "_content/NoWait",
+      "RelativePath": "css/Reservation/Index.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Reservation\\Index.css"
+    },
+    {
       "Identity": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\css\\site.css",
       "SourceId": "NoWait",
       "SourceType": "Discovered",
@@ -1173,6 +1190,40 @@
       "OriginalItemSpec": "wwwroot\\js\\Menu\\index.js"
     },
     {
+      "Identity": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\js\\Reservation\\DateSelector.js",
+      "SourceId": "NoWait",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\",
+      "BasePath": "_content/NoWait",
+      "RelativePath": "js/Reservation/DateSelector.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Reservation\\DateSelector.js"
+    },
+    {
+      "Identity": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\js\\Reservation\\TableEditor.js",
+      "SourceId": "NoWait",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\",
+      "BasePath": "_content/NoWait",
+      "RelativePath": "js/Reservation/TableEditor.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Reservation\\TableEditor.js"
+    },
+    {
       "Identity": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\js\\site.js",
       "SourceId": "NoWait",
       "SourceType": "Discovered",
@@ -1188,23 +1239,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
-    },
-    {
-      "Identity": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\js\\table.js",
-      "SourceId": "NoWait",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\",
-      "BasePath": "_content/NoWait",
-      "RelativePath": "js/table.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\table.js"
     },
     {
       "Identity": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",

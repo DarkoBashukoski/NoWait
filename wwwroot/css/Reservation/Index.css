@@ -1,0 +1,23 @@
+#canvas-container {
+    border-right: green solid 2px;
+}
+
+#calendar-container div {
+    text-align: center;
+    color: gray;
+}
+
+#calendar-container button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    color: green;
+    border: lightgray solid 1px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#calendar-container button:hover {
+    border: green solid 2px;
+}
