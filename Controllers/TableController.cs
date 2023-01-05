@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NoWait.Data;
+using NoWait.Models;
 
 namespace NoWait.Controllers {
     public class TableController : Controller {
@@ -36,6 +37,11 @@ namespace NoWait.Controllers {
 
         private bool TableExists(int id) {
             return (_context.Tables?.Any(e => e.TableId == id)).GetValueOrDefault();
+        }
+
+        public bool IsDateAvailable(Reservation r) {
+            return _context.Reservations.Any(res => r.StartTime < res.EndTime
+                                              && r.EndTime >= res.StartTime);
         }
     }
 }

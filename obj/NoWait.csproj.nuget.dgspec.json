@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Spark\\RiderProjects\\NoWait\\NoWait.csproj": {}
+    "C:\\Users\\Kiko\\Desktop\\FRI\\3-Treta godina\\TPO\\NoWait\\NoWait.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Spark\\RiderProjects\\NoWait\\NoWait.csproj": {
+    "C:\\Users\\Kiko\\Desktop\\FRI\\3-Treta godina\\TPO\\NoWait\\NoWait.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Spark\\RiderProjects\\NoWait\\NoWait.csproj",
+        "projectUniqueName": "C:\\Users\\Kiko\\Desktop\\FRI\\3-Treta godina\\TPO\\NoWait\\NoWait.csproj",
         "projectName": "NoWait",
-        "projectPath": "C:\\Users\\Spark\\RiderProjects\\NoWait\\NoWait.csproj",
-        "packagesPath": "C:\\Users\\Spark\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Spark\\RiderProjects\\NoWait\\obj\\",
+        "projectPath": "C:\\Users\\Kiko\\Desktop\\FRI\\3-Treta godina\\TPO\\NoWait\\NoWait.csproj",
+        "packagesPath": "C:\\Users\\Kiko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kiko\\Desktop\\FRI\\3-Treta godina\\TPO\\NoWait\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Spark\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Kiko\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -86,24 +86,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.12, 6.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -112,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
