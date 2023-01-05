@@ -35,11 +35,131 @@
       text-decoration: none;
       color: inherit;
     }
-</style>
+    
+    .openinghours {
+        /*font-family:Lucida Console;*/
+        border-radius:4px;
+        margin:10px;
+        box-shadow: 0 0 10px black;
+        padding:0 10px 0 10px;
+        overflow: auto;
+        display: inline-block;
+    }
+    .openinghourscontent {
+        float:left;
+    }
+    .openinghourscontent h2 {
+        display:block;
+        text-align:center;
+        margin-top:.33em;
+    }
+    .openinghourscontent button {
+        color:white;
+        /*font-family:Courier New;*/
+        font-size:large;
+        font-weight:bolder;
+        background-color:#4679BD;
+        border-radius:4px;
+        width:100%;
+        margin-bottom:10px;
+    }
+  
+    .opening-hours-table tr td:first-child {
+        font-weight:bold;
+    }
+  
+    .opening-hours-table tr td {
+        padding:5px;
+    }
+    
+    .card {
+      margin: 10px 10px;
+    }
+    
+    input[type='checkbox'] {
+      display: none;
+    }
+    
+    /* Flip Cards CSS */
+    .card-container {
+      display: grid;
+      perspective: 700px;
+    }
+    
+    .card-flip {
+      display: grid;
+      grid-template: 1fr / 1fr;
+      grid-template-areas: "frontAndBack";
+      transform-style: preserve-3d;
+      transition: all 0.7s ease;
+    }
+    
+    .card-flip div {
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+    }
+    
+    .front {
+      grid-area: frontAndBack;
+    }
+    
+    .back {
+      grid-area: frontAndBack;
+      transform: rotateY(-180deg);
+    }
+    
+    input[type='checkbox']:checked + .card-container .card-flip {
+      transform: rotateY(180deg);
+    }
+    #back-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+    }
 
+</style>
+<link rel="stylesheet" 
+      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
+      integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" 
+      crossorigin="anonymous">
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<button
+    type="button"
+    class="btn btn-success btn-floating"
+    id="back-top">
+    <i class="fa fa-chevron-up"></i>
+</button>
+<script>
+    $(document).ready(function(){
+        $("h1").delay("1000").fadeIn();
+        $("#back-top").hide();
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 200) {
+                    $('#back-top').fadeIn();
+                } else {
+                    $('#back-top').fadeOut();
+                }
+            });
+            $('#back-top').click(function () {
+                $('body,html').animate({
+                scrollTop: 0
+                }, 0);
+                return false;
+            });
+        });
+    });
+</script>
+
+
+@* <link rel="stylesheet" href="css/Menu/Index.css"> *@
 <div class="main">
     <image></image>
 </div>
+
 
 <section class="products">
     <div class="container">
@@ -48,19 +168,50 @@
                 <h1>What's Trending</h1>
             </div>
         </div>
+        @* <div class="row"> *@
+        @*     @foreach (var item in Model) { *@
+        @*         <div class="col-lg-3 text-center my-2"> *@
+        @*             <a asp-controller="Menu" asp-action="Details" asp-route-id="@item.MenuItemID"> *@
+        @*                 <div class="card border-0 bg-light"> *@
+        @*                     <div class="card-body"> *@
+        @*                         <img src="images/restaurant.jpg" class="img-fluid" alt=""> *@
+        @*                     </div> *@
+        @*                     <h6>@item.Name</h6> *@
+        @*                     <p>$@item.Price</p> *@
+        @*                 </div> *@
+        @*             </a> *@
+        @*         </div> *@
+        @*     } *@
+        @* </div> *@
         <div class="row">
             @foreach (var item in Model) {
-                <div class="col-lg-3 text-center my-2">
-                    <a asp-controller="Menu" asp-action="Details" asp-route-id="@item.MenuItemID">
-                        <div class="card border-0 bg-light">
-                            <div class="card-body">
-                                <img src="images/restaurant.jpg" class="img-fluid" alt="">
+                <input type="checkbox" id='card-@item.MenuItemID'/>
+                <label class="col-md-4 card-container" for='card-@item.MenuItemID'>
+                    <div class="card-flip">
+                        <!-- Card 2 Front -->
+                        <div class="card front">
+                            <img src="images/restaurant.jpg" class="img-fluid" alt="">
+                            <div class="card-block">
+                                <h6 class='text-black'>@item.Name</h6>
+                                <p class='text-black'>$@item.Price</p>
                             </div>
-                            <h6>@item.Name</h6>
-                            <p>$@item.Price</p>
                         </div>
-                    </a>
-                </div>
+                        <!-- End Card 2 Front -->
+
+                        <!-- Card 2 Back -->
+                        <div class="card back">
+                            <div class="card-header text-black">
+                                <h6 class='text-black col-ld-6 text-center m-auto'>@item.Name</h6>
+                            </div>
+                            <div class="card-block">
+                                <p class='col-ld-6 text-center m-auto text-black'>$@item.Price</p>
+                                <p class='col-ld-6 text-center m-auto text-black'>@item.foodCategory</p>
+                                <p class='col-ld-6 text-center m-auto text-black'>@item.Description</p>
+                            </div>
+                        </div>
+                        <!-- End Card 2 Back -->
+                    </div>
+                </label>
             }
         </div>
         <div class="row">
@@ -70,5 +221,118 @@
                 </a>
             </div>
         </div>
+
+
     </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-lg-5 m-auto text-center">
+                <h1>Make a reservation</h1>
+            </div>
+        </div>
+        <div class="col-lg-5 m-auto text-center">
+            <section class="openinghours">
+                <div class="openinghourscontent section">
+                    <div class="header">
+                        <h2>Opening hours</h2>
+                    </div>
+                    <table class="opening-hours-table">
+                        <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
+                            <td>Monday</td>
+                            <td class="opens">09:00</td>
+                            <td>-</td>
+                            <td class="closes">18:00</td>
+                        </tr>
+                        <tr id="Tuesday" itemprop="openingHours" title="Open Tuesday at 9am to 6pm">
+                            <td>Tuesday</td>
+                            <td class="opens">09:00</td>
+                            <td>-</td>
+                            <td class="closes">18:00</td>
+                        </tr>
+                        <tr id="Wednesday" itemprop="openingHours" title="Open Wednesday at 9am to 6pm">
+                            <td>Wednesday</td>
+                            <td class="opens">09:00</td>
+                            <td>-</td>
+                            <td class="closes">18:00</td>
+                        </tr>
+                        <tr id="Thursday" itemprop="openingHours" title="Open Thursday at 9am to 8pm">
+                            <td>Thursday</td>
+                            <td class="opens">09:00</td>
+                            <td>-</td>
+                            <td class="closes">20:00</td>
+                        </tr>
+                        <tr id="Friday" itemprop="openingHours" title="Open Friday at 9am to 6pm">
+                            <td>Friday</td>
+                            <td class="opens">09:00</td>
+                            <td>-</td>
+                            <td class="closes">18:00</td>
+                        </tr>
+                        <tr id="Saturday" itemprop="openingHours" title="Open Saturday at 10am to 6pm">
+                            <td>Saturday</td>
+                            <td class="opens">10:00</td>
+                            <td>-</td>
+                            <td class="closes">18:00</td>
+                        </tr>
+                        <tr id="Sunday" itemprop="openingHours" title="Open Sunday at 11am to 4pm">
+                            <td>Sunday</td>
+                            <td class="opens">11:00</td>
+                            <td>-</td>
+                            <td class="closes">16:00</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </section>
+        </div>
+        <div class="row">
+            <div class="col-ld-6 text-center m-auto">
+                <a asp-area="" asp-controller="Table" asp-action="Index">
+                    <button class="btn1">Make a reservation</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-lg-5 m-auto text-center">
+                <h1>About us</h1>
+            </div>
+            <div class="col-ld-6 text-center m-auto">
+                NoWait Corporation is an Macedonian multinational fast delivery food chain and real estate company,
+                founded in 2022 as a website operated by Darko Basukoski and Kristijan Pucoski, in Ljubljana, Slovenia.
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-center m-auto">
+                <iframe class="m-auto" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.0284897413176!2d14.465535815451315!3d46.0505299791123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477ad2ad0921e319%3A0xb5f752503b2e09c!2sFakulteta%20za%20ra%C4%8Dunalni%C5%A1tvo%20in%20informatiko%2C%20Ve%C4%8Dna%20pot%20113%2C%201000%20Ljubljana!5e0!3m2!1sen!2ssi!4v1672875452915!5m2!1sen!2ssi" 
+                        width="80%" 
+                        height="400px" 
+                        style="border:1px solid black; border-radius: 35px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col text-center m-auto">
+                <h5>
+                    Contact us
+                </h5>
+                <h7>
+                    Want to get in touch? We'd love to hear from you. Here's how you can reach us...
+                </h7>
+                <br/>
+                <br/>
+                <address>Email: darkobashukoski@gmail.com</address>
+                <address>Mobile: 069 111 222</address>
+                <address>Location: Vecna Pot 113,1000 Ljubljana,Slovenia</address>
+            </div>
+        </div>
+
+    </div>
+
 </section>
