@@ -14,22 +14,53 @@
         <div class="row">
             <hr class="line">
         </div>
+        @* <div class="row"> *@
+        @*     @foreach (var item in Model) { *@
+        @*         <div class="col-lg-4"> *@
+        @*             <a asp-controller="Menu" asp-action="Details" asp-route-id="@item.MenuItemID"> *@
+        @*                 <div class="card-body card border-0"> *@
+        @*                     <p class="fw-bold">@item.Price €</p> *@
+        @*                     <img src="images/test-food.jpeg" class="rounded-circle recipe-image" alt=""> *@
+        @*                     <h4 class="fw-bold">@item.Name</h4> *@
+        @*                     <h6>@item.Description</h6> *@
+        @*                 </div> *@
+        @*             </a> *@
+        @*         </div> *@
+        @*     } *@
+        @* </div> *@
         <div class="row">
             @foreach (var item in Model) {
-                <div class="col-lg-4">
-                    <a asp-controller="Menu" asp-action="Details" asp-route-id="@item.MenuItemID">
-                        <div class="card-body card border-0">
+                <input type="checkbox" id='card-@item.MenuItemID'/>
+                <label class="col-lg-4 card-container" for='card-@item.MenuItemID'>
+                    <div class="card-flip">
+                        <!-- Card Front -->
+                        @* <div class="card front"> *@
+                        <div class="card-body card-block card front border-0">
                             <p class="fw-bold">@item.Price €</p>
                             <img src="images/test-food.jpeg" class="rounded-circle recipe-image" alt="">
                             <h4 class="fw-bold">@item.Name</h4>
-                            <h6>@item.Description</h6>
                         </div>
-                    </a>
-                </div>
+                        @* </div> *@
+                        <!-- End Card Front -->
+
+                        <!-- Card Back -->
+                        <div class="card back">
+                            <div class="card-header text-black">
+                                <h6 class='col-ld-6 text-center m-auto'>@item.Name</h6>
+                            </div>
+                            <div class="card-block">
+                                <p class='col-ld-6 text-center m-auto text-black'>$@item.Price</p>
+                                <p class='col-ld-6 text-center m-auto text-black'>@item.foodCategory</p>
+                                <p class='col-ld-6 text-center m-auto text-black'>@item.Description</p>
+                            </div>
+                        </div>
+                        <!-- End Card Back -->
+                    </div>
+                </label>
             }
         </div>
     </div>
 </div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="js/Menu/index.js"></script>
+@* <script src="js/Menu/index.js"></script> *@

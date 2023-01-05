@@ -72,45 +72,45 @@
         padding:5px;
     }
     
-    .card {
-      margin: 10px 10px;
-    }
+    /*.card {*/
+    /*  margin: 10px 10px;*/
+    /*}*/
     
-    input[type='checkbox'] {
-      display: none;
-    }
+    /*input[type='checkbox'] {*/
+    /*  display: none;*/
+    /*}*/
     
-    /* Flip Cards CSS */
-    .card-container {
-      display: grid;
-      perspective: 700px;
-    }
+    /*!* Flip Cards CSS *!*/
+    /*.card-container {*/
+    /*  display: grid;*/
+    /*  perspective: 700px;*/
+    /*}*/
     
-    .card-flip {
-      display: grid;
-      grid-template: 1fr / 1fr;
-      grid-template-areas: "frontAndBack";
-      transform-style: preserve-3d;
-      transition: all 0.7s ease;
-    }
+    /*.card-flip {*/
+    /*  display: grid;*/
+    /*  grid-template: 1fr / 1fr;*/
+    /*  grid-template-areas: "frontAndBack";*/
+    /*  transform-style: preserve-3d;*/
+    /*  transition: all 0.7s ease;*/
+    /*}*/
     
-    .card-flip div {
-      backface-visibility: hidden;
-      transform-style: preserve-3d;
-    }
+    /*.card-flip div {*/
+    /*  backface-visibility: hidden;*/
+    /*  transform-style: preserve-3d;*/
+    /*}*/
     
-    .front {
-      grid-area: frontAndBack;
-    }
+    /*.front {*/
+    /*  grid-area: frontAndBack;*/
+    /*}*/
     
-    .back {
-      grid-area: frontAndBack;
-      transform: rotateY(-180deg);
-    }
+    /*.back {*/
+    /*  grid-area: frontAndBack;*/
+    /*  transform: rotateY(-180deg);*/
+    /*}*/
     
-    input[type='checkbox']:checked + .card-container .card-flip {
-      transform: rotateY(180deg);
-    }
+    /*input[type='checkbox']:checked + .card-container .card-flip {*/
+    /*  transform: rotateY(180deg);*/
+    /*}*/
     #back-top {
       position: fixed;
       bottom: 20px;
@@ -119,43 +119,21 @@
     }
 
 </style>
-<link rel="stylesheet" 
-      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
-      integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" 
+<link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+      integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
       crossorigin="anonymous">
 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
 <button
     type="button"
     class="btn btn-success btn-floating"
     id="back-top">
     <i class="fa fa-chevron-up"></i>
 </button>
-<script>
-    $(document).ready(function(){
-        $("h1").delay("1000").fadeIn();
-        $("#back-top").hide();
-        $(function () {
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 200) {
-                    $('#back-top').fadeIn();
-                } else {
-                    $('#back-top').fadeOut();
-                }
-            });
-            $('#back-top').click(function () {
-                $('body,html').animate({
-                scrollTop: 0
-                }, 0);
-                return false;
-            });
-        });
-    });
-</script>
 
 
-@* <link rel="stylesheet" href="css/Menu/Index.css"> *@
+<link rel="stylesheet" href="css/Menu/Index.css">
 <div class="main">
     <image></image>
 </div>
@@ -168,40 +146,25 @@
                 <h1>What's Trending</h1>
             </div>
         </div>
-        @* <div class="row"> *@
-        @*     @foreach (var item in Model) { *@
-        @*         <div class="col-lg-3 text-center my-2"> *@
-        @*             <a asp-controller="Menu" asp-action="Details" asp-route-id="@item.MenuItemID"> *@
-        @*                 <div class="card border-0 bg-light"> *@
-        @*                     <div class="card-body"> *@
-        @*                         <img src="images/restaurant.jpg" class="img-fluid" alt=""> *@
-        @*                     </div> *@
-        @*                     <h6>@item.Name</h6> *@
-        @*                     <p>$@item.Price</p> *@
-        @*                 </div> *@
-        @*             </a> *@
-        @*         </div> *@
-        @*     } *@
-        @* </div> *@
         <div class="row">
             @foreach (var item in Model) {
                 <input type="checkbox" id='card-@item.MenuItemID'/>
-                <label class="col-md-4 card-container" for='card-@item.MenuItemID'>
+                <label class="col-lg-4 card-container" for='card-@item.MenuItemID'>
                     <div class="card-flip">
-                        <!-- Card 2 Front -->
-                        <div class="card front">
-                            <img src="images/restaurant.jpg" class="img-fluid" alt="">
-                            <div class="card-block">
-                                <h6 class='text-black'>@item.Name</h6>
-                                <p class='text-black'>$@item.Price</p>
-                            </div>
+                        <!-- Card Front -->
+                        @* <div class="card front"> *@
+                        <div class="card-body card-block card front border-0">
+                            <p class="fw-bold">@item.Price €</p>
+                            <img src="images/test-food.jpeg" class="rounded-circle recipe-image" alt="">
+                            <h4 class="fw-bold">@item.Name</h4>
                         </div>
-                        <!-- End Card 2 Front -->
+                        @* </div> *@
+                        <!-- End Card Front -->
 
-                        <!-- Card 2 Back -->
+                        <!-- Card Back -->
                         <div class="card back">
                             <div class="card-header text-black">
-                                <h6 class='text-black col-ld-6 text-center m-auto'>@item.Name</h6>
+                                <h6 class='col-ld-6 text-center m-auto'>@item.Name</h6>
                             </div>
                             <div class="card-block">
                                 <p class='col-ld-6 text-center m-auto text-black'>$@item.Price</p>
@@ -209,7 +172,7 @@
                                 <p class='col-ld-6 text-center m-auto text-black'>@item.Description</p>
                             </div>
                         </div>
-                        <!-- End Card 2 Back -->
+                        <!-- End Card Back -->
                     </div>
                 </label>
             }
@@ -309,14 +272,15 @@
 
         <div class="row">
             <div class="col text-center m-auto">
-                <iframe class="m-auto" 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.0284897413176!2d14.465535815451315!3d46.0505299791123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477ad2ad0921e319%3A0xb5f752503b2e09c!2sFakulteta%20za%20ra%C4%8Dunalni%C5%A1tvo%20in%20informatiko%2C%20Ve%C4%8Dna%20pot%20113%2C%201000%20Ljubljana!5e0!3m2!1sen!2ssi!4v1672875452915!5m2!1sen!2ssi" 
-                        width="80%" 
-                        height="400px" 
-                        style="border:1px solid black; border-radius: 35px;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe class="m-auto"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.0284897413176!2d14.465535815451315!3d46.0505299791123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477ad2ad0921e319%3A0xb5f752503b2e09c!2sFakulteta%20za%20ra%C4%8Dunalni%C5%A1tvo%20in%20informatiko%2C%20Ve%C4%8Dna%20pot%20113%2C%201000%20Ljubljana!5e0!3m2!1sen!2ssi!4v1672875452915!5m2!1sen!2ssi"
+                        width="80%"
+                        height="400px"
+                        style="border:1px solid black; border-radius: 35px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
             <div class="col text-center m-auto">
                 <h5>
@@ -336,3 +300,28 @@
     </div>
 
 </section>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("h1").delay("1000").fadeIn();
+        $("#back-top").hide();
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 200) {
+                    $('#back-top').fadeIn();
+                } else {
+                    $('#back-top').fadeOut();
+                }
+            });
+            $('#back-top').click(function () {
+                $('body,html').animate({
+                scrollTop: 0
+                }, 0);
+                return false;
+            });
+        });
+    });
+</script>
+@* <script src="js/Menu/index.js"></script> *@
