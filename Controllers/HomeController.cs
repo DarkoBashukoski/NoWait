@@ -15,7 +15,7 @@ public class HomeController : Controller {
     }
 
     public IActionResult Index() {
-        IQueryable<MenuItem>? items = _context.MenuItems;
+        IQueryable<MenuItem>? items = _context.MenuItems.Take(3);
         return View(items);
     }
 
