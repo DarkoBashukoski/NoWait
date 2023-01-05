@@ -111,8 +111,6 @@ table.position.x = 8;
 table.position.y = 3;
 tables.push(table);
 
-draw();
-
 function draw() {
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -403,3 +401,8 @@ function addChair() {
 function addWall() {
     walls.push(new Wall());
 }
+
+draw();
+
+$(document).ready(draw);
+$(document).resize(draw);
