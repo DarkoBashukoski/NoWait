@@ -5,6 +5,39 @@ namespace NoWait.Data;
 public static class DatabaseInitializer {
     public static void init(NoWaitContext context) {
         context.Database.EnsureCreated();
+        
+        if (context.MenuItems.Any()) {
+            return;
+        }
+        var menuItems = new MenuItem[] {
+                new MenuItem{Name="Pasta Carbonara",
+                    Description= "Pasta carbonara is an indulgent yet surprisingly simple recipe. Featuring bacon (or pancetta) with plenty of Parmesan, this recipe takes only 30 minutes to prepare from start to finish!", 
+                    Price= 10.99f, foodCategory=MenuItem.FoodCategory.Dinner},
+                new MenuItem{Name="Green Veggie Burgers",
+                    Description= "Serve in buns, over salad, or all on their own. Any way you serve them, don't skip the creamy Green Goddess sauce over top!", 
+                    Price= 20, foodCategory=MenuItem.FoodCategory.Lunch},
+                new MenuItem{Name="Pasta Carbonara",
+                    Description= "Pasta carbonara is an indulgent yet surprisingly simple recipe. Featuring bacon (or pancetta) with plenty of Parmesan, this recipe takes only 30 minutes to prepare from start to finish!", 
+                    Price= 10.5f, foodCategory=MenuItem.FoodCategory.Dinner},
+                new MenuItem{Name="Green Veggie Burgers",
+                    Description= "Serve in buns, over salad, or all on their own. Any way you serve them, don't skip the creamy Green Goddess sauce over top!", 
+                    Price= 20.3f, foodCategory=MenuItem.FoodCategory.Lunch},
+                new MenuItem{Name="Pasta Carbonara",
+                    Description= "Pasta carbonara is an indulgent yet surprisingly simple recipe. Featuring bacon (or pancetta) with plenty of Parmesan, this recipe takes only 30 minutes to prepare from start to finish!", 
+                    Price= 10, foodCategory=MenuItem.FoodCategory.Dinner},
+                new MenuItem{Name="Green Veggie Burgers",
+                    Description= "Serve in buns, over salad, or all on their own. Any way you serve them, don't skip the creamy Green Goddess sauce over top!", 
+                    Price= 20, foodCategory=MenuItem.FoodCategory.Lunch},
+                new MenuItem{Name="Pasta Carbonara",
+                    Description= "Pasta carbonara is an indulgent yet surprisingly simple recipe. Featuring bacon (or pancetta) with plenty of Parmesan, this recipe takes only 30 minutes to prepare from start to finish!", 
+                    Price= 10, foodCategory=MenuItem.FoodCategory.Dinner},
+                new MenuItem{Name="Green Veggie Burgers",
+                    Description= "Serve in buns, over salad, or all on their own. Any way you serve them, don't skip the creamy Green Goddess sauce over top!", 
+                    Price= 20, foodCategory=MenuItem.FoodCategory.Lunch}
+            };
+
+            context.MenuItems.AddRange(menuItems);
+            context.SaveChanges();
 
         if (context.Ingredients.Any()) {
             return;
@@ -72,5 +105,7 @@ public static class DatabaseInitializer {
 
             context.Ingredients.AddRange(ingredients);
             context.SaveChanges();
+            
+            
     }
 }
