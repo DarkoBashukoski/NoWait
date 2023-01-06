@@ -162,15 +162,16 @@
                         <!-- End Card Front -->
 
                         <!-- Card Back -->
-                        <div class="card back">
+                        <div class="card back text-center">
                             <div class="card-header text-black">
                                 <h6 class='col-ld-6 text-center m-auto'>@item.Name</h6>
+                                <h6 class='col-ld-6 text-center m-auto small' style="color:#198754">@item.Price €</h6>
                             </div>
-                            <div class="card-block">
-                                <p class='col-ld-6 text-center m-auto text-black'>@item.Price €</p>
-                                <p class='col-ld-6 text-center m-auto text-black'>@item.foodCategory</p>
-                                <p class='col-ld-6 text-center m-auto text-black'>@item.Description</p>
-                            </div>
+                                <div class="card-block text-center m-auto justify-content-center align-self-center">
+                                    @* <p class='col-ld-6 text-center m-auto text-black font-weight-bold'>@item.Price €</p> *@
+                                    <p class='col-ld-6 text-center m-auto' style="color: #198754;font-weight: bold;font-style: italic;">@item.foodCategory</p>
+                                    <p class='col-ld-6 text-center m-auto text-black'>@item.Description</p>
+                                </div>
                         </div>
                         <!-- End Card Back -->
                     </div>

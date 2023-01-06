@@ -131,6 +131,15 @@ canvas.addEventListener('wheel', function (e) {
     } else {
         scale = Vector2f.add(scale, new Vector2f(0.1, 0.1));
     }
+    if(scale.x < 0.30000000000000004 || scale.y < 0.30000000000000004) {
+        scale.x = 0.30000000000000004
+        scale.y = 0.30000000000000004
+    }
+    if(scale.x > 1.3 || scale.y > 1.3) {
+        scale.x = 1.3
+        scale.y = 1.3
+    }
+    console.log(scale)
     let afterZoom = screenToWorld(mouse);
     offset = Vector2f.add(Vector2f.subtract(beforeZoom, afterZoom), offset);
 
