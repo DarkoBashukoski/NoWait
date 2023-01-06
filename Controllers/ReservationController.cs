@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using NoWait.Data;
+using NoWait.Models;
 
 namespace NoWait.Controllers;
 
@@ -46,6 +47,18 @@ public class ReservationController : Controller {
         }
 
         return output;
+    }
+
+    public List<Table> GetAllTables() {
+        return _context.Tables.ToList();
+    }
+
+    public List<Chair> GetAllChairs() {
+        return _context.Charis.ToList();
+    }
+
+    public List<Wall> GetAllWalls() {
+        return _context.Walls.ToList();
     }
 
     private string GetDayOfWeek(int year, int month, int day) {

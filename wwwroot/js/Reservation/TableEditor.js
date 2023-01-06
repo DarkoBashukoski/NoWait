@@ -1,59 +1,3 @@
-class Vector2f {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    static add(vec1, vec2) {
-        return new Vector2f(vec1.x + vec2.x, vec1.y + vec2.y)
-    }
-
-    static subtract(vec1, vec2) {
-        return new Vector2f(vec1.x - vec2.x, vec1.y - vec2.y)
-    }
-
-    static multiply(vec1, vec2) {
-        return new Vector2f(vec1.x * vec2.x, vec1.y * vec2.y);
-    }
-
-    static divide(vec1, vec2) {
-        return new Vector2f(vec1.x / vec2.x, vec1.y / vec2.y)
-    }
-
-    static scalarMultiply(scalar, vec1) {
-        return new Vector2f(scalar * vec1.x, scalar * vec1.y);
-    }
-
-    copy() {
-        return new Vector2f(this.x, this.y);
-    }
-
-    round() {
-        return new Vector2f(Math.round(this.x), Math.round(this.y));
-    }
-}
-
-class Chair {
-    constructor() {
-        this.position = new Vector2f(0, 0);
-        this.size = new Vector2f(2, 2);
-    }
-}
-
-class Table {
-    constructor() {
-        this.position = new Vector2f(0, 0);
-        this.size = new Vector2f(6, 4);
-    }
-}
-
-class Wall {
-    constructor() {
-        this.position = new Vector2f(0, 0)
-        this.size = new Vector2f(4, 4);
-    }
-}
-
 let canvas = document.getElementById('canvas');
 
 $(document).ready(function() {
@@ -95,21 +39,6 @@ let chairs = []
 let walls = []
 
 let selected = null;
-
-let wall = new Wall()
-wall.position.x = 3;
-wall.position.y = 6;
-walls.push(wall);
-
-let chair = new Chair();
-chair.position.x = 9;
-chair.position.y = 9;
-chairs.push(chair);
-
-let table = new Table();
-table.position.x = 8;
-table.position.y = 3;
-tables.push(table);
 
 function draw() {
     ctx.fillStyle = "white";
@@ -153,7 +82,7 @@ c.mousedown(function (e) {
     }
 });
 
-c.mouseup(function (e) {
+c.mouseup(function () {
     isDown = false;
     movingObject = false;
     scalingObject = false;

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Y1TJbGL83KiSmjPPafHOpN8SpKYuTCDyyubWPp39+Bo=",
+  "Hash": "RYEV+/bbk+bKUv6oClCOjGQWV1/7pzZ2oodvz0T0Hs8=",
   "Source": "NoWait",
   "BasePath": "_content/NoWait",
   "Mode": "Default",
@@ -1190,6 +1190,23 @@
       "OriginalItemSpec": "wwwroot\\js\\Menu\\index.js"
     },
     {
+      "Identity": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\js\\Reservation\\ClassDefinitions.js",
+      "SourceId": "NoWait",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\",
+      "BasePath": "_content/NoWait",
+      "RelativePath": "js/Reservation/ClassDefinitions.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Reservation\\ClassDefinitions.js"
+    },
+    {
       "Identity": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\js\\Reservation\\DateSelector.js",
       "SourceId": "NoWait",
       "SourceType": "Discovered",
@@ -1222,6 +1239,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Reservation\\TableEditor.js"
+    },
+    {
+      "Identity": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\js\\Reservation\\TableSelector.js",
+      "SourceId": "NoWait",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\",
+      "BasePath": "_content/NoWait",
+      "RelativePath": "js/Reservation/TableSelector.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Reservation\\TableSelector.js"
     },
     {
       "Identity": "C:\\Users\\Spark\\RiderProjects\\NoWait\\wwwroot\\js\\site.js",

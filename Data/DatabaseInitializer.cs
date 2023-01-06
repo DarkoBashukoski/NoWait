@@ -5,6 +5,56 @@ namespace NoWait.Data;
 public static class DatabaseInitializer {
     public static void init(NoWaitContext context) {
         context.Database.EnsureCreated();
+
+        if (context.Tables.Any()) {
+            return;
+        }
+
+        var tables = new Table[] {
+            new Table { X = 2, Y = 4, Width = 6, Height = 4 },
+            new Table { X = 2, Y = 12, Width = 6, Height = 4 },
+            new Table { X = 12, Y = 3, Width = 4, Height = 6 },
+            new Table { X = 20, Y = 3, Width = 4, Height = 6 },
+            new Table { X = 10, Y = 12, Width = 4, Height = 5 },
+            new Table { X = 16, Y = 12, Width = 4, Height = 5 }
+        };
+
+        var chairs = new Chair[] {
+            new Chair { X = 3, Y = 3, Width = 2, Height = 2 },
+            new Chair { X = 5, Y = 3, Width = 2, Height = 2 },
+            new Chair { X = 3, Y = 7, Width = 2, Height = 2 },
+            new Chair { X = 5, Y = 7, Width = 2, Height = 2 },
+            new Chair { X = 3, Y = 11, Width = 2, Height = 2 },
+            new Chair { X = 5, Y = 11, Width = 2, Height = 2 },
+            new Chair { X = 3, Y = 15, Width = 2, Height = 2 },
+            new Chair { X = 5, Y = 15, Width = 2, Height = 2 },
+            new Chair { X = 11, Y = 11, Width = 2, Height = 2 },
+            new Chair { X = 11, Y = 16, Width = 2, Height = 2 },
+            new Chair { X = 17, Y = 11, Width = 2, Height = 2 },
+            new Chair { X = 17, Y = 16, Width = 2, Height = 2 },
+            new Chair { X = 11, Y = 4, Width = 2, Height = 2 },
+            new Chair { X = 15, Y = 4, Width = 2, Height = 2 },
+            new Chair { X = 11, Y = 6, Width = 2, Height = 2 },
+            new Chair { X = 15, Y = 6, Width = 2, Height = 2 },
+            new Chair { X = 19, Y = 4, Width = 2, Height = 2 },
+            new Chair { X = 23, Y = 4, Width = 2, Height = 2 },
+            new Chair { X = 19, Y = 6, Width = 2, Height = 2 },
+            new Chair { X = 23, Y = 6, Width = 2, Height = 2 }
+        };
+
+        var walls = new Wall[] {
+            new Wall { X = 0, Y = 0, Width = 28, Height = 2 },
+            new Wall { X = 0, Y = 2, Width = 2, Height = 18 },
+            new Wall { X = 2, Y = 18, Width = 20, Height = 2 },
+            new Wall { X = 20, Y = 12, Width = 2, Height = 6 },
+            new Wall { X = 22, Y = 12, Width = 6, Height = 2 },
+            new Wall { X = 26, Y = 2, Width = 2, Height = 8 }
+        };
+        
+        context.Tables.AddRange(tables);
+        context.Charis.AddRange(chairs);
+        context.Walls.AddRange(walls);
+        context.SaveChanges();
         
         if (context.MenuItems.Any()) {
             return;

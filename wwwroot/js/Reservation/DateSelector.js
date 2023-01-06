@@ -1,6 +1,7 @@
 let currentTime = new Date();
 
-let selectedDate = null;
+let selectedDateButton = null;
+let selectedDateTime = null;
 let dateButtons = []
 let labels = []
 let dates = []
@@ -21,9 +22,10 @@ for (let i = 0; i < 6; i++) {
     dates[i] = new Date(currentTime.getTime());
 
     dateButtons[i].click(function () {
-        selectedDate = dateButtons[i];
+        selectedDateButton = dateButtons[i];
+        selectedDateTime = dates[i];
         updateDateButtons();
-        updateTimeButtons(dates[i], 1); //TODO change table number base on selected table
+        updateTimeButtons(dates[i], selectedTable.tableId);
     });
 }
 
@@ -37,10 +39,10 @@ function updateDateButtons() {
             b.css("border", "lightgray solid 1px");
         });
     });
-    selectedDate.css("background-color", " #198754");
-    selectedDate.css("color", "white");
-    selectedDate.css("border", " #198754 solid 2px");
-    selectedDate.hover(function () {}, function () {});
+    selectedDateButton.css("background-color", " #198754");
+    selectedDateButton.css("color", "white");
+    selectedDateButton.css("border", " #198754 solid 2px");
+    selectedDateButton.hover(function () {}, function () {});
 }
 
 function getNextDate(date) {
