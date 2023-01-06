@@ -1,5 +1,5 @@
 #canvas-container {
-    border-right: green solid 2px;
+    border-right: #198754 solid 2px;
 }
 
 #calendar-container div {
@@ -7,17 +7,45 @@
     color: gray;
 }
 
+p {
+    color: #198754;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+#calendar-container {
+    padding-bottom: 20px;
+}
+
+#table-selection {
+    padding-bottom: 20px;
+}
+
 #calendar-container button {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: white;
-    color: green;
+    color: #198754;
     border: lightgray solid 1px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 #calendar-container button:hover {
-    border: green solid 2px;
+    border: #198754 solid 2px;
+}
+
+#time-selection div {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#time-selection button {
+    height: 100%;
+    width: 100%;
+    font-size: 22px;
+    font-weight: bold;
 }

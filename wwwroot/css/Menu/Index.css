@@ -4,7 +4,7 @@
 
 .card-body h4 {
     text-align: center;
-    color: green;
+    color: #198754;
     margin-bottom: 25px;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .card-body p {
-    color: green;
+    color: #198754;
 }
 
 a, a:hover, a:focus, a:active {
@@ -31,7 +31,7 @@ a, a:hover, a:focus, a:active {
 }
 .card-header h6 {
     text-align: center;
-    color: green;
+    color: #198754;
 }
 
 .recipe-image {

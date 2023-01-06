@@ -1,7 +1,7 @@
-namespace NoWait.Models;
+namespace NoWait.Models; 
 
-public class Table {
-    public int TableId { get; set; }
+public class Wall {
+    public int WallId { get; set; }
     
     public int X { get; set; }
     public int Y { get; set; }

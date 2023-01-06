@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace NoWait.Models; 
 
 public class Reservation {
@@ -8,8 +6,9 @@ public class Reservation {
     public ApplicationUser User { get; set; }
     public Table Table { get; set; }
     public List<Order> Orders { get; set; }
-    [DataType(DataType.Date)]
-    public DateTime StartTime { get; set; }
-    [DataType(DataType.Date)]
-    public DateTime EndTime { get; set; }
+    
+    public int Year { get; set; }
+    public int Month { get; set; }
+    public int Day { get; set; }
+    public int Hour { get; set; }
 }
