@@ -139,7 +139,6 @@ canvas.addEventListener('wheel', function (e) {
         scale.x = 1.3
         scale.y = 1.3
     }
-    console.log(scale)
     let afterZoom = screenToWorld(mouse);
     offset = Vector2f.add(Vector2f.subtract(beforeZoom, afterZoom), offset);
 

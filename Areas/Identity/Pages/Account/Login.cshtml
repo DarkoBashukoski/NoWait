@@ -15,26 +15,13 @@
     pointer-events: none;
     transition: .5s;
     }
-    .txt_field span::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: mediumseagreen;
-    transition: .5s;
-    }
+ 
     .txt_field input:focus ~ label,
     .txt_field input:valid ~ label{
     top: -7px;
     color:  mediumseagreen;
     }
-    .txt_field input:focus ~ span::before,
-    .txt_field input:valid ~ span::before{
-    width: 100%;
-    color: mediumseagreen;
-    }
+    
     #login-submit{
     margin-top: 5%;
     }

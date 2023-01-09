@@ -138,6 +138,14 @@ canvas.addEventListener('wheel', function (e) {
     } else {
         scale = Vector2f.add(scale, new Vector2f(0.1, 0.1));
     }
+    if(scale.x < 0.30000000000000004 || scale.y < 0.30000000000000004) {
+        scale.x = 0.30000000000000004
+        scale.y = 0.30000000000000004
+    }
+    if(scale.x > 1.3 || scale.y > 1.3) {
+        scale.x = 1.3
+        scale.y = 1.3
+    }
     let afterZoom = screenToWorld(mouse);
     offset = Vector2f.add(Vector2f.subtract(beforeZoom, afterZoom), offset);
 
@@ -316,6 +324,12 @@ function scaleObject(change) {
             break;
         case "bottom-right":
             selected.size = Vector2f.add(scaleSizeStart, change).round();
+    }
+    if(selected.size.x < 1) {
+        selected.size.x = 1;
+    }
+    if(selected.size.y < 1) {
+        selected.size.y = 1;
     }
 }
 
