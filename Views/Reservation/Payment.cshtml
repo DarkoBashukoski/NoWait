@@ -70,5 +70,39 @@
         </div>
     </section>
 </div>
+
+<script>
+
+function cardnumber(inputtxt){
+  var cardno = /\d{16}/;
+  if(inputtxt.value.match(cardno)){ return true; }
+  else{ 
+      alert("Not a valid Dinners Club card number!");
+      return false;
+  }
+}
+
+function CCVnumber(inputtxt){
+  var cardno = /\d{3}/;
+  if(inputtxt.value.match(cardno)){ return true; }
+    else{ 
+        alert("Not a valid Dinners Club card number!");
+        return false;
+    }
+}
+
+function DateValidation(inputtxt){
+  var cardno =  /\d{2}\/\d{2}/;
+  if(inputtxt.value.match(cardno)){ return true; }
+    else{ 
+        alert("Not a valid Dinners Club card number!");
+        return false;
+    }
+}
+
+
+</script>
+
+
 </body>
 </html>

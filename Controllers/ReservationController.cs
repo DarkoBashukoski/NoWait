@@ -80,11 +80,11 @@ public class ReservationController : Controller {
             r.Orders.Add(o);
         }
 
-        r.IsFinished = true;
+        // r.IsFinished = true;
         _context.Update(r);
         _context.SaveChanges();
         
-        return RedirectToAction(nameof(Index), "Home");
+        return RedirectToAction(nameof(Payment));
     }
 
     private bool ReservationExists(int id) {

@@ -8,101 +8,101 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NoWait
 build_property.RootNamespace = NoWait
-build_property.ProjectDir = C:\Users\Kiko\Desktop\FRI\3-Treta godina\TPO\NoWait\
+build_property.ProjectDir = C:\Users\pc\RiderProjects\NoWait\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Kiko\Desktop\FRI\3-Treta godina\TPO\NoWait
+build_property.MSBuildProjectDirectory = C:\Users\pc\RiderProjects\NoWait
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Home/Index.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Menu/Create.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Menu/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Menu/Delete.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Menu/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Menu/Details.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Menu/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Menu/Edit.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Menu/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Menu/Index.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Menu/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Reservation/Index.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Reservation/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Reservation/Payment.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Reservation/Payment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cUGF5bWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Reservation/Selection.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Reservation/Selection.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cU2VsZWN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Shared/Error.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/_ViewImports.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/_ViewStart.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kiko/Desktop/FRI/3-Treta godina/TPO/NoWait/Views/Shared/_Layout.cshtml]
+[C:/Users/pc/RiderProjects/NoWait/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-wgb44ulehh
