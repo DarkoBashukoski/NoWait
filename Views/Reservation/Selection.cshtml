@@ -1,0 +1,269 @@
+@model IEnumerable<NoWait.Models.MenuItem>
+
+@{
+    ViewData["Title"] = "Reservation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        margin: 0; height: 100%; overflow: hidden;
+    }
+
+    #menu-selection {
+        overflow-y: scroll;
+        border-right: #198754 solid 2px;
+    }
+    
+    .card-body h4 {
+        text-align: center;
+        color: #198754;
+        margin-bottom: 63px;
+    }
+    
+    .card-body h6 {
+        text-align: center;
+        color: black;
+    }
+    
+    .card-body p {
+        color: #198754;
+    }
+    
+    a, a:hover, a:focus, a:active {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    #menu-selection .card:hover {
+        background: #e2ffea;
+    }
+    
+    #menu-selection .card {
+        margin-bottom: 24px;
+        border: solid #198754 2px;
+    }
+    
+    .card-header h6 {
+        text-align: center;
+        color: #198754;
+    }
+    
+    .recipe-image {
+        padding: 40px;
+    }
+    
+    
+    input[type='checkbox'] {
+        display: none;
+    }
+    
+    /* Flip Cards CSS */
+    .card-container {
+        display: grid;
+        perspective: 700px;
+    }
+    
+    .card-flip {
+        display: grid;
+        grid-template: 1fr / 1fr;
+        grid-template-areas: "frontAndBack";
+        transform-style: preserve-3d;
+        transition: all 0.7s ease;
+        height: auto;
+    }
+    
+    .card-flip div {
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+    
+    .front {
+        grid-area: frontAndBack;
+        height: auto;
+    
+    }
+    
+    .back {
+        grid-area: frontAndBack;
+        transform: rotateY(-180deg);
+        height: auto;
+    }
+    
+    input[type='checkbox']:checked + .card-container .card-flip {
+        transform: rotateY(180deg);
+    }
+    
+    #menu-selection .btn-success {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    td {
+        vertical-align: middle;
+    }
+    
+    td:nth-child(1) {
+        width: 60%;
+        text-align: left;
+    }
+    
+    td:nth-child(2) {
+        width: 20%;
+        text-align: center;
+    }
+    
+    td:nth-child(3) {
+        width: 20%;
+        text-align: center;
+    }
+        
+    td:nth-child(4) {
+        width: 20%;
+        text-align: center;
+    }
+    
+    #quantity-selection {
+        overflow-y: scroll;
+        position: relative;
+    }
+    
+    #checkoutButton {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+      integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+      crossorigin="anonymous">
+
+<div class="card">
+    <div class="row" style="margin: 0">
+        <div id="menu-selection" class="col-md-8">
+            <div class="row">
+                @foreach (var item in Model) {
+                    <input type="checkbox" id='card-@item.MenuItemID'/>
+                    <label class="col-md-4 card-container" for='card-@item.MenuItemID'>
+                        <div class="card-flip">
+                            <!-- Card Front -->
+                            @* <div class="card front"> *@
+                            <div class="card-body card-block card front">
+                                <p class="fw-bold">@item.Price €</p>
+                                <img src="images/test-food.jpeg" class="rounded-circle recipe-image" alt="">
+                                <h4 class="fw-bold">@item.Name</h4>
+                                <button id="button-@item.MenuItemID" class="btn btn-success rounded-pill" onclick="addToOrder('@item.Name', '@item.MenuItemID')">Add to Order</button>
+                            </div>
+                            @* </div> *@
+                            <!-- End Card Front -->
+
+                            <!-- Card Back -->
+                            <div class="card back">
+                                <div class="card-header text-black">
+                                    <h6 class='col-ld-6 text-center m-auto'>@item.Name</h6>
+                                    <h6 class='col-ld-6 text-center m-auto small' style="color:#198754">@item.Price €</h6>
+                                </div>
+                                <div class="card-block text-center m-auto justify-content-center align-self-center">
+                                    @* <p class='col-ld-6 text-center m-auto text-black'>$@item.Price</p> *@
+                                    <p class='col-ld-6 text-center m-auto text-black'>@item.foodCategory</p>
+                                    <p class='col-ld-6 text-center m-auto text-black'>@item.Description</p>
+                                </div>
+                            </div>
+                            <!-- End Card Back -->
+                        </div>
+                    </label>
+                }
+            </div>
+        </div>
+        <div id="quantity-selection" class="col-md-4">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        Ordered Items
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody id="orders"></tbody>
+            </table>
+            <button id="checkoutButton" onclick="checkout()" class="btn btn-success rounded-pill">Checkout</button>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#menu-selection').css('height', window.innerHeight - 100)
+        $(window).resize(function () {
+            $('#menu-selection').css('height', window.innerHeight - 100)
+        });
+        $('#quantity-selection').css('height', window.innerHeight - 100)
+        $(window).resize(function () {
+            $('#quantity-selection').css('height', window.innerHeight - 100)
+        });
+    });
+    
+    function addToOrder(menuItemName, menuItemId) {
+        let html = '<tr>'
+        html += '<td class="itemName">' + menuItemName + '</td>'
+        html += '<td><button id="add-' + menuItemId + '" class="btn btn-success"><i class="fa fa-plus"></i></button></td>'
+        html += '<td class="itemCount" id="label-' + menuItemId + '">1</td>'
+        html += '<td><button id="remove-' + menuItemId + '" class="btn btn-danger"><i class="fa fa-minus"></i></button></td>'
+        html += '</tr>'
+    
+        $('#orders').append(html);
+        $('#button-' + menuItemId).prop('disabled', true);
+        $('#add-' + menuItemId).click(function () {
+            let label = $('#label-' + menuItemId)
+            let newValue = parseInt(label.html()) + 1;
+            label.html(newValue);
+        });
+        $('#remove-' + menuItemId).click(function () {
+            let label = $('#label-' + menuItemId)
+            let newValue = parseInt(label.html()) - 1;
+            if (newValue < 1) {
+                $('#button-' + menuItemId).prop('disabled', false);
+                label.closest('tr').remove();
+            }
+    
+            label.html(newValue);
+        });
+    }
+    
+    function checkout() {
+        let formData = new FormData();
+        $("#orders tr").each(function () {
+            let order = {
+                menuItemName: $(this).find(".itemName").html(),
+                count: $(this).find(".itemCount").html()
+            }
+            console.log(order);
+            formData.append("orders", JSON.stringify(order))
+        });
+        $.ajax({
+            url: "/Reservation/SubmitReservation/",
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function () {
+                location.href = '/Home/Index/';
+            }
+        });
+    }
+</script>

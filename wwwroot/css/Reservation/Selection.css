@@ -1,0 +1,82 @@
+#menu-selection {
+    overflow-y: scroll;
+}
+
+.card-body h4 {
+    text-align: center;
+    color: #198754;
+    margin-bottom: 25px;
+}
+
+.card-body h6 {
+    text-align: center;
+    color: black;
+}
+
+.card-body p {
+    color: #198754;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+#menu-selection .card:hover {
+    background: #e2ffea;
+}
+
+#menu-selection .card {
+    margin-bottom: 24px;
+    border: solid #198754 2px;
+}
+
+.card-header h6 {
+    text-align: center;
+    color: #198754;
+}
+
+.recipe-image {
+    padding: 40px;
+}
+
+
+input[type='checkbox'] {
+    display: none;
+}
+
+/* Flip Cards CSS */
+.card-container {
+    display: grid;
+    perspective: 700px;
+}
+
+.card-flip {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    grid-template-areas: "frontAndBack";
+    transform-style: preserve-3d;
+    transition: all 0.7s ease;
+    height: auto;
+}
+
+.card-flip div {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.front {
+    grid-area: frontAndBack;
+    height: auto;
+
+}
+
+.back {
+    grid-area: frontAndBack;
+    transform: rotateY(-180deg);
+    height: auto;
+}
+
+input[type='checkbox']:checked + .card-container .card-flip {
+    transform: rotateY(180deg);
+}

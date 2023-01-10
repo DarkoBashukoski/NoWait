@@ -11152,19 +11152,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kiko\\.nuget\\packages\\": {}
+    "C:\\Users\\Darko\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kiko\\Desktop\\FRI\\3-Treta godina\\TPO\\NoWait\\NoWait.csproj",
+      "projectUniqueName": "C:\\Users\\Darko\\RiderProjects\\NoWait\\NoWait.csproj",
       "projectName": "NoWait",
-      "projectPath": "C:\\Users\\Kiko\\Desktop\\FRI\\3-Treta godina\\TPO\\NoWait\\NoWait.csproj",
-      "packagesPath": "C:\\Users\\Kiko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kiko\\Desktop\\FRI\\3-Treta godina\\TPO\\NoWait\\obj\\",
+      "projectPath": "C:\\Users\\Darko\\RiderProjects\\NoWait\\NoWait.csproj",
+      "packagesPath": "C:\\Users\\Darko\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Darko\\RiderProjects\\NoWait\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Kiko\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Darko\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

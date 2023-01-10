@@ -94,10 +94,17 @@ function updateTimeButtons(date, tableId) {
             number = number === 0 ? 12 : number;
 
             let html = '<div class="col-lg-6">'
-            html += `<button class="btn btn-success">${number}:00 ${AmPm}</button>`
+            html += `<button class="btn btn-success" onclick="startReservation(element)">${number}:00 ${AmPm}</button>`
             html += '</div>'
 
             timeContainer.append(html);
         });
     });
+}
+
+function startReservation(hour) {
+    let year = selectedDateTime.getFullYear();
+    let month = selectedDateTime.getMonth();
+    let day = selectedDateTime.getDay();
+    console.log(year, month, day, hour);
 }
