@@ -15,7 +15,9 @@ public class HomeController : Controller {
     }
 
     public IActionResult Index() {
-        IQueryable<MenuItem>? items = _context.MenuItems.Take(3);
+        IQueryable<MenuItem>? items = _context.MenuItems.Where(i => i.MenuItemID == 16 
+                                                                    || i.MenuItemID == 23 
+                                                                    || i.MenuItemID == 26);
         return View(items);
     }
 

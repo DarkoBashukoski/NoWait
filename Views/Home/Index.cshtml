@@ -72,6 +72,37 @@
         padding:5px;
     }
     
+    .faa {
+        padding: 20px;
+        font-size: 30px;
+        width: 60px;
+        text-align: center;
+        text-decoration: none;
+        /*border-radius: 50%;*/
+    }
+    
+     /*Facebook */
+    .fa-facebook {
+        background: #3B5998;
+        color: white;
+    }
+    
+    /* Twitter */
+    .fa-twitter {
+        background: #55ACEE;
+        color: white;
+    }
+    
+    .fa-youtube {
+        background: #bb0000;
+        color: white;
+    }
+    
+    .fa-instagram {
+        background: #125688;
+        color: white;
+    }
+    
     /*.card {*/
     /*  margin: 10px 10px;*/
     /*}*/
@@ -124,6 +155,8 @@
       integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
       crossorigin="anonymous">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 <button
     type="button"
@@ -155,7 +188,8 @@
                         @* <div class="card front"> *@
                         <div class="card-body card-block card front border-0">
                             <p class="fw-bold">@item.Price €</p>
-                            <img src="images/test-food.jpeg" class="rounded-circle recipe-image" alt="">
+                            @{ string ImageName = item.MenuItemID + ".jpg"; }
+                            <img src="images/@ImageName" class="rounded-circle recipe-image" alt="">
                             <h4 class="fw-bold">@item.Name</h4>
                         </div>
                         @* </div> *@
@@ -167,11 +201,11 @@
                                 <h6 class='col-ld-6 text-center m-auto'>@item.Name</h6>
                                 <h6 class='col-ld-6 text-center m-auto small' style="color:#198754">@item.Price €</h6>
                             </div>
-                                <div class="card-block text-center m-auto justify-content-center align-self-center">
-                                    @* <p class='col-ld-6 text-center m-auto text-black font-weight-bold'>@item.Price €</p> *@
-                                    <p class='col-ld-6 text-center m-auto' style="color: #198754;font-weight: bold;font-style: italic;">@item.foodCategory</p>
-                                    <p class='col-ld-6 text-center m-auto text-black'>@item.Description</p>
-                                </div>
+                            <div class="card-block text-center m-auto justify-content-center align-self-center">
+                                @* <p class='col-ld-6 text-center m-auto text-black font-weight-bold'>@item.Price €</p> *@
+                                <p class='col-ld-6 text-center m-auto' style="color: #198754;font-weight: bold;font-style: italic;">@item.foodCategory</p>
+                                <p class='col-ld-6 text-center m-auto text-black'>@item.Description</p>
+                            </div>
                         </div>
                         <!-- End Card Back -->
                     </div>
@@ -295,6 +329,12 @@
                 <address>Email: darkobashukoski@gmail.com</address>
                 <address>Mobile: 069 111 222</address>
                 <address>Location: Vecna Pot 113,1000 Ljubljana,Slovenia</address>
+                <div>
+                    <a href="#" class="fa faa fa-facebook"></a>
+                    <a href="#" class="fa faa fa-instagram"></a>
+                    <a href="#" class="fa faa fa-twitter"></a>
+                    <a href="#" class="fa faa fa-youtube"></a>
+                </div>
             </div>
         </div>
 

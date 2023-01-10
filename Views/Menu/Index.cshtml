@@ -37,8 +37,9 @@
                         @* <div class="card front"> *@
                         <div class="card-body card-block card front border-0">
                             <p class="fw-bold">@item.Price €</p>
-                            <img src="images/test-food.jpeg" class="rounded-circle recipe-image" alt="">
-                            <h4 class="fw-bold">@item.Name</h4>
+                            @{ string ImageName = item.MenuItemID + ".jpg";}
+                            <img src="images/@ImageName" class="rounded-circle recipe-image" alt="">
+                            <h4 class="fw-bold">@item.Name, @item.MenuItemID</h4>
                         </div>
                         @* </div> *@
                         <!-- End Card Front -->
