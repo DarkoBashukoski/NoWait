@@ -161,7 +161,8 @@
                             @* <div class="card front"> *@
                             <div class="card-body card-block card front">
                                 <p class="fw-bold">@item.Price €</p>
-                                <img src="images/test-food.jpeg" class="rounded-circle recipe-image" alt="">
+                                @{ string ImageName = item.MenuItemID + ".jpg";}
+                                <img src="../images/@ImageName" class="rounded-circle recipe-image" alt="">
                                 <h4 class="fw-bold">@item.Name</h4>
                                 <button id="button-@item.MenuItemID" class="btn btn-success rounded-pill" onclick="addToOrder('@item.Name', '@item.MenuItemID')">Add to Order</button>
                             </div>
