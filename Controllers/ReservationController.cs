@@ -35,13 +35,23 @@ public class ReservationController : Controller {
     }
 
     public int SubmitTable(int year, int month, int day, int hour, int tableId) {
+        
+        string userId = _userManager.GetUserId(User);
+        Reservation Previous = _context.Reservations.FirstOrDefault(i => i.User.Id == userId && i.IsFinished == false);
+        if (Previous != null) {
+            _context.Reservations.Remove(Previous);
+            _context.SaveChanges();
+        }
+        
+        
         Reservation r = new Reservation {
             Year = year,
             Month = month,
             Day = day,
             Hour = hour,
             Table = _context.Tables.First(t => t.TableId == tableId),
-            User = _userManager.FindByIdAsync(_userManager.GetUserId(User)).Result
+            User = _userManager.FindByIdAsync(_userManager.GetUserId(User)).Result,
+            IsFinished = false
         };
 
         _context.Add(r);
@@ -66,6 +76,7 @@ public class ReservationController : Controller {
             r.Orders.Add(o);
         }
 
+        r.IsFinished = true;
         _context.Update(r);
         _context.SaveChanges();
         

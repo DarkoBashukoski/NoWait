@@ -152,7 +152,7 @@ function updateTimeButtons(date, tableId) {
 function startReservation(hour) {
     let year = selectedDateTime.getFullYear();
     let month = selectedDateTime.getMonth()+1;
-    let day = selectedDateTime.getDay();
+    let day = selectedDateTime.getDate();
     let tableId = selectedTable.tableId;
     
     $.ajax({
