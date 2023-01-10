@@ -11,4 +11,5 @@ public class Reservation {
     public int Month { get; set; }
     public int Day { get; set; }
     public int Hour { get; set; }
+    public bool IsFinished { get; set; }
 }
