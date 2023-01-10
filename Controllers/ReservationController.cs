@@ -33,6 +33,10 @@ public class ReservationController : Controller {
     public IActionResult Selection() {
         return View(_context.MenuItems);
     }
+    
+    public IActionResult Payment() {
+        return View();
+    }
 
     public int SubmitTable(int year, int month, int day, int hour, int tableId) {
         Reservation r = new Reservation {

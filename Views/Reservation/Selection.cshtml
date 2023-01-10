@@ -177,7 +177,7 @@
                                 </div>
                                 <div class="card-block text-center m-auto justify-content-center align-self-center">
                                     @* <p class='col-ld-6 text-center m-auto text-black'>$@item.Price</p> *@
-                                    <p class='col-ld-6 text-center m-auto text-black'>@item.foodCategory</p>
+                                    <p class='col-ld-6 text-center m-auto' style="color: #198754;font-weight: bold;font-style: italic;">@item.foodCategory</p>
                                     <p class='col-ld-6 text-center m-auto text-black'>@item.Description</p>
                                 </div>
                             </div>
@@ -263,7 +263,7 @@
             processData: false,
             contentType: false,
             success: function () {
-                location.href = '/Home/Index/';
+                location.href = '/Reservation/Payment/';
             }
         });
     }

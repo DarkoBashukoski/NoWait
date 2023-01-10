@@ -29,4 +29,8 @@
       <Compile Remove="Migrations\20221206151220_Initial.Designer.cs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Table\Payment.cshtml" />
+    </ItemGroup>
+
 </Project>
