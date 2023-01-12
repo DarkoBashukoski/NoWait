@@ -1,0 +1,56 @@
+@model IEnumerable<NoWait.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<div>
+    <h1 class="text-center">Reservations</h1>
+
+    @* <p> *@
+    @*     <a asp-action="Create">Create New</a> *@
+    @* </p> *@
+    <table class="table table-dark table-striped table-hover" style="color:#198754">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReservationId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Table.TableId)
+                </th>
+                <th>
+                   Date
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationId)
+            </td>
+            <td>
+                @* @item.Table.TableId *@
+                @Html.DisplayFor(modelItem => item.Table.TableId)
+            </td>
+            <td>
+                @{string Date = item.Day + "-" + item.Month + "-" + item.Year + " " + item.Hour + ":00";}
+                @Date
+            </td>
+            <td>
+                @* <a asp-action="Edit" asp-route-id="@item.ReservationId">Edit</a> | *@
+                <a style="color:#198754" asp-action="Details" asp-route-id="@item.ReservationId">Order</a>
+                @* <a asp-action="Delete" asp-route-id="@item.ReservationId">Delete</a> *@
+            </td>
+            
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>
