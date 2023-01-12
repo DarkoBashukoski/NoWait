@@ -164,7 +164,7 @@
                                 @{ string ImageName = item.MenuItemID + ".jpg";}
                                 <img src="../images/@ImageName" class="rounded-circle recipe-image" alt="">
                                 <h4 class="fw-bold">@item.Name</h4>
-                                <button id="button-@item.MenuItemID" class="btn btn-success rounded-pill" onclick="addToOrder('@item.Name', '@item.MenuItemID')">Add to Order</button>
+                                <button id="button-@item.MenuItemID" class="btn btn-success rounded-pill" onclick="addToOrder('@item.Name', '@item.MenuItemID', @item.Price)">Add to Order</button>
                             </div>
                             @* </div> *@
                             <!-- End Card Front -->
@@ -219,24 +219,41 @@
         });
     });
     
-    function addToOrder(menuItemName, menuItemId) {
+    var finalPrice = 0;
+    
+    function ChangeFinalPrice(){
+        if (finalPrice == 0){
+            $('#checkoutButton').text("Checkout")
+            return;
+        }
+        $('#checkoutButton').text("Checkout " + finalPrice + " €")
+    }
+    
+    function addToOrder(menuItemName, menuItemId, menuItemPrice) {
         let html = '<tr>'
         html += '<td class="itemName">' + menuItemName + '</td>'
         html += '<td><button id="add-' + menuItemId + '" class="btn btn-success"><i class="fa fa-plus"></i></button></td>'
         html += '<td class="itemCount" id="label-' + menuItemId + '">1</td>'
         html += '<td><button id="remove-' + menuItemId + '" class="btn btn-danger"><i class="fa fa-minus"></i></button></td>'
         html += '</tr>'
-    
+        
+        finalPrice += menuItemPrice;
+        ChangeFinalPrice();
+        
         $('#orders').append(html);
         $('#button-' + menuItemId).prop('disabled', true);
         $('#add-' + menuItemId).click(function () {
             let label = $('#label-' + menuItemId)
             let newValue = parseInt(label.html()) + 1;
+            finalPrice += menuItemPrice;
             label.html(newValue);
+            ChangeFinalPrice();
         });
         $('#remove-' + menuItemId).click(function () {
             let label = $('#label-' + menuItemId)
             let newValue = parseInt(label.html()) - 1;
+            finalPrice -= menuItemPrice;
+            ChangeFinalPrice();
             if (newValue < 1) {
                 $('#button-' + menuItemId).prop('disabled', false);
                 label.closest('tr').remove();

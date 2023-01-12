@@ -22,45 +22,48 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label text-black">Full Name</label>
-                                    <input class="form-control" placeholder="Bob Smith"/>
+                                    <input class="form-control" placeholder="Bob Smith" id="Input_fullName"/>
+                                    <span  class="text-danger d-lg-none" id = "validation_fullName"> Wrong CardNUm</span>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label text-black">Country</label>
-                                    <input class="form-control" placeholder="Slovenia"/>
+                                    <input class="form-control" placeholder="Slovenia" id="Input_Country"/>
+                                    <span  class="text-danger d-lg-none" id = "validation_Country"> Wrong CardNUm</span>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label text-black">City</label>
-                                    <input class="form-control" placeholder="Ljubljana"/>
+                                    <input class="form-control" placeholder="Ljubljana" id="Input_City"/>
+                                    <span  class="text-danger d-lg-none" id = "validation_City"> Wrong CardNUm</span>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label text-black">Address</label>
-                                    <input class="form-control" placeholder="st. Marc, no. 5"/>
+                                    <input class="form-control" placeholder="st. Marc, no. 5" id="Input_Address"/>
+                                    <span  class="text-danger d-lg-none" id = "validation_Address"> Wrong CardNUm</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label text-black">Payment Methods</label>
-                                    <img src="~/images/restaurant.jpg/" alt="" />
-                                </div>
-                                <div class="form-group">
                                     <label class="control-label text-black">Card Number</label>
-                                    <input class="form-control" placeholder="1234-5678-9012-3456"/>
+                                    <input class="form-control" placeholder="1234-5678-9012-3456" id="Input_cardNum"/>
+                                    <span  class="text-danger d-lg-none" id = "validation_cardNum"> Wrong CardNUm</span>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label text-black">CVV</label>
-                                    <input class="form-control" placeholder="123"/>
+                                    <input class="form-control" placeholder="123" id="Input_CCVNum"/>
+                                    <span  class="text-danger d-lg-none" id = "validation_CCVNum"> Wrong CCV</span>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label text-black">Expiration Date</label>
-                                    <input class="form-control" placeholder="01/2023"/>
+                                    <input class="form-control" placeholder="01/2023" id="Input_date"/>
+                                    <span  class="text-danger d-lg-none" id = "validation_date"> Wrong DDate</span>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
-                                <a asp-controller="Home" asp-action="Index">
-                                    <button class="form-control btn btn-success mt-2">Confirm Payment</button>
-                                </a>
+                                @* <a asp-controller="Home" asp-action="Index"> *@
+                                    <button class="form-control btn btn-success mt-2" onclick="CheckEverything()">Confirm Payment</button>
+                                @* </a> *@
                             </div>
                         </div>
                     </div>
@@ -71,33 +74,107 @@
     </section>
 </div>
 
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
 <script>
+    $('#validation_cardNum').addClass("d-lg-none");
+    $('#validation_CCVNum').addClass("d-lg-none");
+    $('#validation_date').addClass("d-lg-none");
+    $('#validation_fullName').addClass("d-lg-none");
+    $('#validation_Country').addClass("d-lg-none");
+    $('#validation_City').addClass("d-lg-none");
+    $('#validation_Address').addClass("d-lg-none");
+    
+    // $('#Input_fullName').addClass("d-lg-none");
+    // $('#Input_Country').addClass("d-lg-none");
+    // $('#Input_City').addClass("d-lg-none");
+    // $('#Input_Address').addClass("d-lg-none");
+
+function CheckEverything(){
+    let passed = true;
+    $('#validation_cardNum').addClass("d-lg-none");
+        $('#validation_CCVNum').addClass("d-lg-none");
+        $('#validation_date').addClass("d-lg-none");
+        $('#validation_fullName').addClass("d-lg-none");
+        $('#validation_Country').addClass("d-lg-none");
+        $('#validation_City').addClass("d-lg-none");
+        $('#validation_Address').addClass("d-lg-none");
+    
+    if (!cardnumber($('#Input_cardNum').val())){
+        $('#validation_cardNum').removeClass("d-lg-none");
+        passed = false;
+    }
+    
+    if (!CCVnumber($('#Input_CCVNum').val())){
+        $('#validation_CCVNum').removeClass("d-lg-none"); 
+        passed = false;
+    }
+    
+    if (!DateValidation($('#Input_date').val())){
+        $('#validation_date').removeClass("d-lg-none");
+        passed = false;
+    }
+    
+    if (!CheckIfEmpty($('#Input_fullName').val())){
+        $('#validation_fullName').removeClass("d-lg-none");
+        passed = false;
+    }
+    
+    if (!CheckIfEmpty($('#Input_Country').val())){
+        $('#validation_Country').removeClass("d-lg-none");
+        passed = false;
+    }
+    
+    if (!CheckIfEmpty($('#Input_City').val())){
+        $('#validation_City').removeClass("d-lg-none");
+        passed = false;
+    }
+    
+    if (!CheckIfEmpty($('#Input_Address').val())){
+        $('#validation_Address').removeClass("d-lg-none");
+        passed = false;
+    }
+    
+    if (passed){
+        $.ajax({
+                url: `/Reservation/ConfirmPayment`,
+                type: 'POST',
+                processData: false,
+                contentType: false,
+                success: function () {
+                    location.href = '/';
+                }
+            });
+    }
+    
+}
 
 function cardnumber(inputtxt){
   var cardno = /\d{16}/;
-  if(inputtxt.value.match(cardno)){ return true; }
-  else{ 
-      alert("Not a valid Dinners Club card number!");
-      return false;
-  }
+  if(inputtxt.match(cardno)){ return true; }
+  else{ return false; }
 }
 
 function CCVnumber(inputtxt){
   var cardno = /\d{3}/;
-  if(inputtxt.value.match(cardno)){ return true; }
+  if(inputtxt.match(cardno)){ return true; }
     else{ 
-        alert("Not a valid Dinners Club card number!");
         return false;
     }
 }
 
 function DateValidation(inputtxt){
   var cardno =  /\d{2}\/\d{2}/;
-  if(inputtxt.value.match(cardno)){ return true; }
+  if(inputtxt.match(cardno)){ return true; }
     else{ 
-        alert("Not a valid Dinners Club card number!");
         return false;
     }
+}
+
+function CheckIfEmpty(inputtxt){
+   if (inputtxt.trim().length === 0){ return false; }
+   
+   return true
 }
 
 

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
@@ -26,6 +27,7 @@ public class ReservationController : Controller {
     }
 
     // GET: Reservation
+    [Authorize]
     public IActionResult Index() {
         return View();
     }
@@ -126,6 +128,17 @@ public class ReservationController : Controller {
         return new DateTime(year, month, day).ToString("ddd");
     }
 
+    public IActionResult ConfirmPayment() {
+        string userId = _userManager.GetUserId(User);
+        Reservation r = _context.Reservations.First(i => i.User.Id == userId);
+        r.IsFinished = true;
+
+        _context.Reservations.Update(r);
+        _context.SaveChanges();
+
+        return RedirectToAction("Index", "Home");
+    }
+
     private class WorkingHours {
         public int Opening { get; }
         public int Closing { get; }
@@ -135,4 +148,5 @@ public class ReservationController : Controller {
             Closing = closing;
         }
     }
+    
 }

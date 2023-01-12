@@ -1,0 +1,110 @@
+﻿@* @model IQueryable<NoWait.Models.MenuItem> *@
+@model IQueryable<NoWait.Models.Reservation>
+@{
+    ViewData["Title"] = "AdminPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+ .table-row{
+    cursor:pointer;
+ }
+</style>
+
+<div>
+  <h1 class="text-center text-info"> Reservations </h1>
+  <table class="table table-dark">
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Table</th>
+          <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+    @foreach (var item in Model) {
+        
+        string[] bal = new string[item.Orders.Count * 3];
+        int counter = 0;
+        @foreach (var order in item.Orders) {
+            bal[counter] = order.OrderId.ToString(); counter++;
+            bal[counter] = order.Item.ToString(); counter++;
+            bal[counter] = order.Count.ToString(); counter++;
+        }
+
+        <tr class="table-row" onclick="MakeTable(@item.ReservationId)">
+            <th scope="row">@item.ReservationId</th>
+            <td>@item.Table.TableId</td>
+            @{string Date = item.Day + "-" + item.Month + "-" + item.Year + " " + item.Hour + ":00";}
+            <td>@Date</td>
+        </tr>
+    }
+    
+    </tbody>
+  </table>
+  
+  <table class="table table-dark" id="table-orders">
+      <thead>
+          <tr>
+              <th scope="col">#</th>
+              <th scope="col">Item</th>
+              <th scope="col">Count</th>
+          </tr>
+      </thead>
+  
+      <tbody>
+
+      </tbody>
+    </table>
+  
+  <h1 class="text-center text-info"> Orders </h1>
+  <span class="text-center text-info" id="span-info"> Press On certain Row to show Order Details</span>
+  
+</div>
+
+
+
+<script>
+
+function MakeTable(allOrders){
+    for (const allOrdersKey in allOrders) { where
+      
+    }
+    
+    console.log("i AM GERE");
+    console.log(allOrders);
+    $('#span-info').addClass("d-lg-none");
+    $('#table-orders tbody').empty();
+    
+    for(let i = 0; i < allOrders.length; i++) {
+        console.log(allOrders[i]);
+    }
+    // for (let order in allOrders) {
+    //     console.log(order)
+    //     // let html = '<tr>'
+    //     //     html += '<td class="itemName">' + menuItemName + '</td>'
+    //     //     html += '<td><button id="add-' + menuItemId + '" class="btn btn-success"><i class="fa fa-plus"></i></button></td>'
+    //     //     html += '<td class="itemCount" id="label-' + menuItemId + '">1</td>'
+    //     //     html += '<td><button id="remove-' + menuItemId + '" class="btn btn-danger"><i class="fa fa-minus"></i></button></td>'
+    //     //     html += '</tr>'
+    //
+    //         let html = '<tr>'
+    //         html += <th>order.OrderId</th>
+    //         html += <td>order.Item</td>
+    //         html += <td>order.Count</td>
+    //         // html += '<td class="itemName">' + menuItemName + '</td>'
+    //         // html += '<td><button id="add-' + menuItemId + '" class="btn btn-success"><i class="fa fa-plus"></i></button></td>'
+    //         // html += '<td class="itemCount" id="label-' + menuItemId + '">1</td>'
+    //         // html += '<td><button id="remove-' + menuItemId + '" class="btn btn-danger"><i class="fa fa-minus"></i></button></td>'
+    //         html += '</tr>'
+    //         $('#table-orders > tbody:last-child').append(html);
+    // }
+
+
+
+
+
+}
+
+</script>

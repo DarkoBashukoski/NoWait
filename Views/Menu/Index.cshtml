@@ -8,11 +8,11 @@
 
 <div class="container">
     <div id="row">
-        <div class="col-md-4">
-            <h1>Products</h1>
+        <div class="text-center">
+            <h1 class="display-2"><strong>Menu</strong></h1>
         </div>
         <div class="row">
-            <hr class="line">
+            @* <hr class="line"> *@
         </div>
         @* <div class="row"> *@
         @*     @foreach (var item in Model) { *@
@@ -28,39 +28,56 @@
         @*         </div> *@
         @*     } *@
         @* </div> *@
-        <div class="row">
-            @foreach (var item in Model) {
-                <input type="checkbox" id='card-@item.MenuItemID'/>
-                <label class="col-lg-4 card-container" for='card-@item.MenuItemID'>
-                    <div class="card-flip">
-                        <!-- Card Front -->
-                        @* <div class="card front"> *@
-                        <div class="card-body card-block card front border-0">
-                            <p class="fw-bold">@item.Price €</p>
-                            @{ string ImageName = item.MenuItemID + ".jpg";}
-                            <img src="images/@ImageName" class="rounded-circle recipe-image" alt="">
-                            <h4 class="fw-bold">@item.Name, @item.MenuItemID</h4>
-                        </div>
-                        @* </div> *@
-                        <!-- End Card Front -->
+        
+        
+            @foreach (MenuItem.FoodCategory category in Enum.GetValues(typeof(MenuItem.FoodCategory))) {
+                @if (category == MenuItem.FoodCategory.Drink || category == MenuItem.FoodCategory.Salad) {
+                    continue;
+                }
+                <div class="col-md-4">
+                    <h1>@category</h1>
+                </div>
+                <div class="row">
+                    <hr class="line">
+                </div>
+                <div class="row">
+                @foreach (var item in Model) {
+                    @if (item.foodCategory == category) {
+                        <input type="checkbox" id='card-@item.MenuItemID'/>
+                        <label class="col-lg-4 card-container" for='card-@item.MenuItemID'>
+                            <div class="card-flip">
+                                <!-- Card Front -->
+                                @* <div class="card front"> *@
+                                <div class="card-body card-block card front border-0">
+                                    <p class="fw-bold">@item.Price €</p>
+                                    @{ string ImageName = item.MenuItemID + ".jpg"; }
+                                    <img src="images/@ImageName" class="rounded-circle recipe-image" alt="">
+                                    <h4 class="fw-bold">@item.Name, @item.MenuItemID</h4>
+                                </div>
+                                @* </div> *@
+                                <!-- End Card Front -->
 
-                        <!-- Card Back -->
-                        <div class="card back">
-                            <div class="card-header text-black">
-                                <h6 class='col-ld-6 text-center m-auto'>@item.Name</h6>
-                                <h6 class='col-ld-6 text-center m-auto small' style="color:#198754">@item.Price €</h6>
+                                <!-- Card Back -->
+                                <div class="card back">
+                                    <div class="card-header text-black">
+                                        <h6 class='col-ld-6 text-center m-auto'>@item.Name</h6>
+                                        <h6 class='col-ld-6 text-center m-auto small' style="color:#198754">@item.Price €</h6>
+                                    </div>
+                                    <div class="card-block text-center m-auto justify-content-center align-self-center">
+                                        @* <p class='col-ld-6 text-center m-auto text-black'>$@item.Price</p> *@
+                                        <p class='col-ld-6 text-center m-auto' style="color: #198754;font-weight: bold;font-style: italic;">@item.foodCategory</p>
+                                        <p class='col-ld-6 text-center m-auto text-black'>@item.Description</p>
+                                    </div>
+                                </div>
+                                <!-- End Card Back -->
                             </div>
-                           <div class="card-block text-center m-auto justify-content-center align-self-center">
-                                @* <p class='col-ld-6 text-center m-auto text-black'>$@item.Price</p> *@
-                                <p class='col-ld-6 text-center m-auto' style="color: #198754;font-weight: bold;font-style: italic;">@item.foodCategory</p>
-                                <p class='col-ld-6 text-center m-auto text-black'>@item.Description</p>
-                            </div>
-                        </div>
-                        <!-- End Card Back -->
-                    </div>
-                </label>
+                        </label>
+                    }
+                }
+                </div>
             }
-        </div>
+
+        
     </div>
 </div>
 
