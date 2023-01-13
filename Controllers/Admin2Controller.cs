@@ -22,7 +22,7 @@ namespace NoWait.Controllers
         // GET: Admin2
         public async Task<IActionResult> Index()
         {
-              return _context.Reservations != null ? 
+            return _context.Reservations != null ? 
                           View(await _context.Reservations.Where(i => i.IsFinished == true)
                               .Include(i => i.Orders)
                               .Include(i => i.Table)
